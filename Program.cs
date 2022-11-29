@@ -6,7 +6,9 @@ namespace PlanYourHeist
     {
         static void Main(string[] args)
         {
-            Console.WriteLine("Hello World!");
+            Console.WriteLine("Plan Your Heist B)");
+            Console.WriteLine("Enter team member's name");
+            TeamMember 
         }
     }
 }
