@@ -28,18 +28,26 @@ namespace PlanYourHeist
             };
             Console.WriteLine($"{teamMembers.Count} team members in team.");
 
-            int luckValue = new Random().Next(-10, 11);
+            Console.WriteLine("How many attemps would you like?");
+            int numberOfAttempts = int.Parse(Console.ReadLine());
 
-            int bankDifficultyLevel = 100 + luckValue;
-
-            int teamSkill = 0;
-            foreach (TeamMember teamMember in teamMembers)
+            for (int i = 0; i < numberOfAttempts; i++)
             {
-                teamSkill += teamMember.SkillLevel;
-            }
 
-            Console.WriteLine($"Team Skill Level: {teamSkill}. Bank's Difficulty Level: {bankDifficultyLevel}.");
-            Console.WriteLine((teamSkill > bankDifficultyLevel) ? "You succesfully robbed the bank!" : "You failed and now you're in prison.");
+
+                int luckValue = new Random().Next(-10, 11);
+
+                int bankDifficultyLevel = 100 + luckValue;
+
+                int teamSkill = 0;
+                foreach (TeamMember teamMember in teamMembers)
+                {
+                    teamSkill += teamMember.SkillLevel;
+                }
+
+                Console.WriteLine($"Team Skill Level: {teamSkill}. Bank's Difficulty Level: {bankDifficultyLevel}.");
+                Console.WriteLine((teamSkill > bankDifficultyLevel) ? "You succesfully robbed the bank!" : "You failed and now you're in prison.");
+            }
         }
     }
 }
